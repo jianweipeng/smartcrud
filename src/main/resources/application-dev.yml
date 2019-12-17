@@ -1,0 +1,38 @@
+server:
+  port: 18081
+
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.107.103:3306/smart_crud?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: crud
+      password: crud123
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      # MySQL 8.x: com.mysql.cj.jdbc.Driver
+      # MySQL 5.x：com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  path: ./logger/smartcrud.log
+
+
+mybatis:
+  #配置mapper文件的位置
+  mapper-locations: classpath:mapper/*.xml
+  #配置实体类的位置
+  type-aliases-package:  com.shanghai.unicom.micro.smartcrud.domain
+
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+my:
+  fixLenth: 6
+  age: 18
+  school: shanghai
+
+

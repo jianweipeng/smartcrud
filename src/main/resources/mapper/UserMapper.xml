@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.shanghai.unicom.micro.smartcrud.repository.UserMapper">
+    <select id="selectUserinfo" resultType="User">
+        SELECT * FROM tf_f_user
+    </select>
+
+
+    <insert id="addCustfInfo" useGeneratedKeys="true" keyProperty="id" parameterType="com.shanghai.unicom.micro.smartcrud.domain.Customer">
+
+        insert into tf_f_customer (CUST_ID,CUST_NAME,PSPT_ID,PSPT_TYPE,ACCT_ID,STATUS,IN_DATE)
+        values
+        (#{custId},#{custName},#{psptId},#{psptType},#{acctId},#{status},#{inDate} )
+
+    </insert>
+</mapper>
